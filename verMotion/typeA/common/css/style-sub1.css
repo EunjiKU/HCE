@@ -1,0 +1,44 @@
+@import url(./reset.css);
+@import url(./fonts.css);
+
+.inner {width: 1460px; margin: 0 auto;}
+
+/* 스크롤 모션 */
+.scroll-motion {position: relative; top: 80px; opacity: 0; transition: top 0.8s ease, opacity 0.8s ease;}
+.scroll-motion.active {position: relative; top: 0; opacity: 1; transition: top 0.8s ease, opacity 0.8s ease;}
+.tit-area.scroll-motion .txt {transition-delay: .1s;}
+.scroll-sec .scroll-items.scroll-motion {transition-delay: .4s;}
+
+
+/* 제목 영역 */
+.tit-sec {position: relative;}
+.tit-area {padding: 476px 0 150px;}
+.tit-area .tit {margin-bottom: 40px;}
+.tit-area .txt {transition-delay: .1s;}
+
+
+/* 마우스 영역 */
+/* .cursor {position: fixed; left: 0; top: 0; transform: translate(-50%, -50%); z-index: 9; width: 100px; height: 100px; border-radius: 50%; background: url(../images/suba-1-cursor-arrow.png) no-repeat center center rgba(37, 37, 37, .2); backdrop-filter: blur(6px);  pointer-events: none; opacity: 0;} */
+.cursor {position: fixed; left: 0; top: 0; translate(-48%, -48%); z-index: 9; width: 100px; height: 100px; border-radius: 50%; background: url(../images/suba-1-cursor-arrow.png) no-repeat center center rgba(37, 37, 37, .2); backdrop-filter: blur(6px);  pointer-events: none; opacity: 0;}
+.cursor.on {opacity: 1;}
+
+
+/* 스크롤 영역 */
+.scroll-sec {position: relative; width: 100%; height: 100vh;}
+.scroll-sec .box {position: absolute; top: 0; bottom: 0;  z-index: 1; width: calc(50% - 730px); background-color: #fff; pointer-events: none;}
+.scroll-sec .left {left: 0;}
+.scroll-sec .right {right: 0;}
+.scroll-sec .scroll-items {position: relative; width: 100%; height: 100%;}
+.scroll-sec .scroll-items .scroll-item {position: absolute; display: inline-block; width: 100%; height: 100vh; overflow: hidden;}
+.scroll-sec .scroll-items .scroll-item .bg {position: relative; width: 100%; height: 100%; overflow: hidden;}
+.scroll-sec .scroll-items .scroll-item .bg::after {content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, .4);}
+.scroll-sec .scroll-items .scroll-item .bg img {position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover;}
+.scroll-sec .scroll-items .scroll-item .bg video {position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover;}
+
+.scroll-sec .scroll-items .scroll-item .txt-box {position: absolute; left: 0; top: 0; bottom: 0; right: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; text-align: center;}
+.scroll-sec .scroll-items .scroll-item .txt-box span {display: block; text-align: center;}
+.scroll-sec .scroll-items .scroll-item .txt-box .tit {margin-bottom: 50px;}
+
+
+/* 헤더 영역 */
+header {position: fixed; top: -130px;}

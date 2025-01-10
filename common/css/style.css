@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Montserrat-Regular.eot);
+  src: url(../fonts/Montserrat-Regular?#iefix) format('embedded-opentype'),
+      url(../fonts/Montserrat-Regular.woff) format('woff'),
+      url(../fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/Montserrat-Medium.eot);
+  src: url(../fonts/Montserrat-Medium?#iefix) format('embedded-opentype'),
+      url(../fonts/Montserrat-Medium.woff) format('woff'),
+      url(../fonts/Montserrat-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Montserrat-Bold.eot);
+  src: url(../fonts/Montserrat-Bold?#iefix) format('embedded-opentype'),
+      url(../fonts/Montserrat-Bold.woff) format('woff'),
+      url(../fonts/Montserrat-Bold.ttf) format('truetype');
+}
+
+
+*{margin:0; padding:0; -webkit-text-size-adjust:none; box-sizing: border-box}
+html{width:100%; height:100%;}
+body{position:relative; font-size:12px; font-family: 'Montserrat', 'Malgun Gothic', sans-serif; color:#666;}
+body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,form,fieldset,input,table,tr,th,td{margin:0; padding:0}
+ul,ol,li{list-style:none}
+img, fieldset{border:none; vertical-align:top}
+legend{display:none}
+button{vertical-align:middle;}
+input, select{height:16px; vertical-align:middle; background:#fff; border:1px solid #e6e6e6;color:#666;font-family:"malgun gothic", sans-serif, dotum,"ë‹ì›€",sans-serif;}
+input{padding:3px;}
+select{padding:2px}
+textarea{font-size:13px; font-family:"malgun gothic", sans-serif, dotum,"ë‹ì›€",sans-serif; color:#666; padding:3px; vertical-align:middle; background:#fff; border:1px solid #ddd; color:#777}
+.checkbox{padding:0; margin:0; border:0;}
+.disNone{display:none;}
+.disNone2{text-indent:-9999px}
+a{text-decoration:none; color:#666;}
+a:hover, a:focus, a:active{text-decoration:none; color:#666;}
+table{width:100%; border-collapse:collapse}
+.disB{display:block}
+caption {display:none}
+
+#wrapper{overflow: hidden;}
+header{text-align:center; background:#222;}
+header .banner {height: 50px; line-height: 50px; color: rgba(255, 255, 255, .8); font-size: 18px; font-weight: 400; letter-spacing: -0.005em;}
+header .banner .logo {color: rgba(255, 255, 255, 1); font-weight: 500;}
+
+footer{text-align:center; border-top:1px solid #e5e5e5; background:#fff; padding:7px 0 16px;}
+
+main .inner {position: relative; display: flex; width: 100%; min-width: 1024px; height: calc(100vh - 100px);}
+
+.type-wrap {display: flex; flex-direction: column; justify-content: center; align-items: center; width: 30%;}
+.type-wrap .type {position: relative; padding-bottom: 20px; display: inline-block; width: 200px; font-size: 32px; color: rgba(255, 255, 255, 0.4); font-weight: 500; transition: all 0.6s ease;}
+.type-wrap .type + .type {margin-top: 40px;}
+.type-wrap .type:after {content:''; position: absolute; left: 0; bottom: 0; width: 80px; height: 2px; background-color: rgba(255, 255, 255, 0.4); transition: width 0.6s ease;}
+.type-wrap .type .txt {position: absolute; left: 50px; bottom: -10px; font-size: 20px; font-weight: 400; transform: translateX(100px); opacity: 0;}
+
+.type-wrap .type.on {color:#fff;}
+.type-wrap .type.on:after {width: 40px; background-color: #fff;}
+.type-wrap .type:hover:after {width: 40px; background-color: #fff;}
+.type-wrap .type.on .txt {transform: translateX(0); transition: all 0.6s ease; opacity: 1;}
+.type-wrap .type:hover .txt {transform: translateX(0); transition: all 0.6s ease; opacity: 1;}
+
+.inner .img-area {position: relative; width: 100%;}
+.inner .type-img {position: absolute; right: 5%; top: 50%; width: 100vh; transform: translateY(-50%); transition: all 0.5s ease;}
+.inner .type-img .img-wrap {position: relative; overflow: hidden;}
+.inner .type-img .img-wrap>img {width: 100%; transform: scale(1.5); transition: all 0.7s ease; opacity: 0;}
+.inner .type-img .img-wrap:before {content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); transition: all 0.3s ease; opacity: 0; z-index: 1;}
+.inner .type-img .img-wrap:hover:before {opacity: 1;}
+
+.inner .type-img .btn-wrap {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transition: all 0.5s cubic-bezier(0.48, 0.18, 0.47, 1); opacity: 0; z-index: 1;}
+.inner .type-img .btn-wrap a + a {margin-left: 5px;}
+.inner .type-img .img-wrap:hover .btn-wrap {opacity: 1;}
+
+.inner .type-img .txt-wrap {margin-top: 20px; overflow: hidden;}
+.inner .type-img .txt-wrap * {font-size: 16px; color: #fff; transform: translateY(100%); transition: transform 0.7s ease; opacity: 0;}
+.inner .type-img.show .txt-wrap * {transform: translateY(0); transition-delay: 0.1s; opacity: 1;}
+.inner .type-img .txt strong {font-weight: bold; font-size: 18px;}
+.inner .type-img .txt span {display: inline-block; width: 100%; margin-top: 10px;}
+
+
+.inner .type-img.show {opacity: 1; z-index: 1;}
+.inner .type-img.show .img-wrap>img {transform: scale(1); opacity: 1;}
+
+.inner .bg-wrap {position: fixed; width: 100%; height: 100%; overflow: hidden; z-index: -1;}
+.inner .bg-wrap:before {content:''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .8); z-index: 1;}
+.inner .bg-wrap .img-wrap {position: absolute; left: 0%; top: 0%;}
+.inner .bg-wrap img {transform: scale(1); width: 100vw; transition: all 0.6s ease; opacity: 0;}
+.inner .bg-wrap .img-wrap.on img {transform: scale(1); opacity: 1;}
+
+.loading {position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: #000; z-index: 10;}
+.loading .loading-txt {position: absolute; left: 50%; top: 50%; font-size: 2.4rem; color: #fff; font-weight: 500; transform: translate(-50%, -50%);}
+.loading .txt-bg {position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .4);}
+
+@media screen and (max-width: 1200px) {
+  .inner .type-wrap .type {font-size: 30px; padding-bottom: 15px;}
+  .inner .type-wrap .type .txt {font-size: 18px;}
+  .inner .img-area .type-img {width: 80vh;}
+  .inner .img-area .type-img .txt-wrap * {font-size: 14px;}
+}

@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./common/css/aos.css" />
+  <!-- <link rel="stylesheet" href="./common/css/swiper.css"> -->
+  <link rel="stylesheet" href="./common/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./common/css/fonts.css" />
+  <link rel="stylesheet" href="./common/css/guide.css" />
+  <script src="./common/js/jquery-1.12.4.min.js"></script>
+  <!-- <script src="./common/js/swiper.min.js"></script> -->
+  <script src="./common/js/swiper-bundle.min.js"></script>
+  <script src="./common/js/gsap.min.js"></script>
+  <script src="./common/js/ScrollToPlugin.min.js"></script>
+  <script src="./common/js/jquery-mousewheel.js"></script>
+  <script src="./common/js/ScrollTrigger.min.js"></script>
+  <!-- <script src="./common/js/sub1.js"></script> -->
+  <title>HyundaiCE - STYLEGUIDE</title>
+</head>
+
+<body>
+  <div id="wrap">
+    <div class="bg"><img src="./common/images/img-guide-visual-pattern-bg.png" alt=""></div>
+    <header>
+      <div class="inner">
+        <h1>
+          <a href="../../index.html"><img src="./common/images/guide-logo.png" alt=""></a>
+        </h1>
+        <a class="btn-menu" href="javascript:"><img src="./common/images/guide-btn-menu.png" alt=""></a>
+      </div>
+    </header>
+
+    <div class="menu">
+      <p class="img"><img src="./common/images/guide-menu.png" alt=""></p>
+      <a class="btn-close" href="javascript:">
+        <img src="./common/images/guide-menu-close.png" alt="">
+      </a>
+    </div>
+
+    <div class="contents">
+      <section class="kv-area">
+        <div class="kv-img scroll-motion">
+          <p class="txt"><img src="./common/images/img-guide-visual-txt.png" alt=""></p>
+          <p class="tit"><img src="./common/images/img-guide-visual-tit.png" alt=""></p>
+          <p class="date"><img src="./common/images/img-guide-visual-date.png" alt=""></p>
+        </div>
+      </section>
+      
+      <section class="guide-con con1">
+        <p class="con scroll-motion">
+          <img src="./common/images/guide-con1-img-01.png" alt="">
+        </p>
+        <p class="con scroll-motion">
+          <img src="./common/images/guide-con1-img-02.png" alt="">
+        </p>
+        <p class="con scroll-motion">
+          <img src="./common/images/guide-con1-img-03.png" alt="">
+        </p>
+        <p class="con scroll-motion">
+          <img src="./common/images/guide-con1-img-04.png" alt="">
+        </p>
+      </section>
+      <section class="guide-con con2">
+        <p class="con scroll-motion">
+          <img src="./common/images/guide-con2-img-01.png" alt="">
+        </p>
+        <p class="con scroll-motion">
+          <img src="./common/images/guide-con2-img-02.png" alt="">
+        </p>
+        
+      </section>
+      <section class="guide-con con3">
+        <p class="con scroll-motion">
+          <img src="./common/images/guide-con3-img-01.png" alt="">
+        </p>
+        <p class="con scroll-motion">
+          <img src="./common/images/guide-con3-img-02.png" alt="">
+        </p>
+      </section>
+      <section class="guide-con con4">
+        <a href="../../index.html">
+          <p class="con scroll-motion">
+            <img src="./common/images/guide-con4-img-01.png" alt="">
+          </p>
+          <p class="con scroll-motion">
+            <img src="./common/images/guide-con4-img-02.png" alt="">
+          </p>
+        </a>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    $(function () {
+      $("header .btn-menu").on('click', function(){
+        gsap.to($(".menu"), {duration: 1, right: 0, ease: Cubic.easeInOut});
+        $("body").addClass("scl-lock")
+      });
+
+      $(".menu .btn-close").on('click', function(){
+        gsap.to($(".menu"), {duration: 1, right: -539, ease: Cubic.easeOut});
+        $("body").removeClass("scl-lock")
+      }); 
+
+      scrollMotionTrigger();
+
+      function scrollMotionTrigger() {
+        if ($(".scroll-motion").size() > 0) {
+          $(".scroll-motion:visible").each(function (q) {
+            gsap.to($(this), {
+              scrollTrigger: {
+                trigger: $(this),
+                start: "top 60%",
+                end: "bottom top",
+                toggleClass: { targets: $(".scroll-motion:visible").eq(q), className: "active" },
+                once: true,
+                //markers: true,
+              },
+            });
+          });
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

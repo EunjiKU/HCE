@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import url(./reset.css);
+@import url(./fonts.css);
+
+#wrap {width: 100%; overflow: hidden;}
+
+
+header {position: absolute; top: -120px; left: 50%; transform: translate(-50%, 0); width: 100%; height: 120px; z-index: 100;}
+header h1 {position: absolute; bottom: 26px; left: 50%; transform: translate(-50%, 0); width: 200px; height: 30px;}
+header h1 > a {position: absolute; top: 0; left: 0; width: 200px; height: 30px;}
+header h1 > a > img {position: absolute; top: 0; left: 0; width: 200px; height: 30px; transition-duration: 0.5s; transition-property: opacity;}
+header h1 > a > img.white {opacity: 0;}
+header .menu1 {position: absolute; bottom: 0; left: 80px; width: 323px; height: 49px;}
+header .menu1::after {content: ""; display: block; position: absolute; bottom: 0; left: 0; width: 31px; height: 2px; background-color: #008233; opacity: 0; transition-duration: 0.5s; transition-property: opacity;}
+header .menu1 > img {position: absolute; top: 0; left: 0; width: 323px; height: 21px; transition-duration: 0.5s; transition-property: opacity;}
+header .menu1 > img.white {opacity: 0;}
+header .menu1 > img.hover {opacity: 0;}
+header .menu2 {position: absolute; bottom: 0; right: 80px; width: 323px; height: 49px;}
+header .menu2 > img {position: absolute; top: 0; left: 0; width: 323px; height: 21px; transition-duration: 0.5s; transition-property: opacity;}
+header .menu2 > img.white {opacity: 0;}
+header .menu2 > img.hover {opacity: 0;}
+header .util {position: absolute; top: 24px; right: 80px; width: 96px; height: 22px;}
+header .util > img {position: absolute; top: 0; left: 0; width: 96px; height: 22px; transition-duration: 0.5s; transition-property: opacity;}
+header .util > img.white {opacity: 0;}
+
+nav {display: flex; justify-content: center; align-items: center; position: absolute; top: 120px; left: 0; width: 100%; height: 0; background: #fff; z-index: 100; overflow: hidden; transition-duration: 0.5s; transition-property: height;}
+nav::before {content: ""; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background-color: rgba(0, 0, 0, 0.12);}
+nav .inner {position: relative; width: calc(100% - 160px); height: 630px;}
+nav .inner .left {position: absolute; top: 0; left: 0;}
+nav .inner .right {position: absolute; top: 0; right: 0;}
+nav.hover {height: 790px;}
+
+header.wht .white {opacity: 1 !important;}
+header.wht .color {opacity: 0 !important;}
+header.hover .white {opacity: 0 !important;}
+header.hover .hover {opacity: 1 !important;}
+header.hover h1 > a > img.color {opacity: 1 !important;}
+header.hover .util > img.color {opacity: 1 !important;}
+header.hover {background-color: #fff;}
+header.hover .menu1::after {opacity: 1;}
+
+
+.fir-video {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden; z-index: 9;}
+.fir-video video {display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width: auto; height: auto; max-width: 120%; min-height: 120%; object-fit: cover;}
+.mask {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: url('../images/mask1.svg') no-repeat center center; background-size: cover; overflow: hidden; z-index: 10;}
+
+.main-movie {position: fixed; top: 0; left: 0; width: 100%; height: 100vh;}
+.main-movie video {display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width: auto; height: auto; max-width: 120%; min-height: 120%; object-fit: cover;}
+
+.main-copy1 {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; opacity: 0; z-index: 11;}
+.main-copy1 .inner {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 1460px; height: 175px;}
+.main-copy1 .inner .copy {position: relative; width: 718px; height: 175px;}
+.main-copy1 .inner .copy > img {position: absolute; top: 0; left: 0; width: 718px; height: 175px;}
+.main-copy1 .inner .txt {position: relative; transform: translate(0, 100px); opacity: 0; margin-top: 80px;}
+.main-copy1 .wht-arrow {position: fixed; bottom: 50px; right: 80px; z-index: 11;}
+
+.main-copy {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; opacity: 0; z-index: 10;}
+.main-copy .inner {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 1460px; height: 175px;}
+.main-copy .inner .copy {display: flex; align-items: center; position: relative; width: 718px; height: 175px;}
+.main-copy .inner .copy > img {position: absolute; top: 0; left: 0; width: 100%;}
+.main-copy .inner .txt {position: relative; transform: translate(0, 100px); opacity: 0; margin-top: 80px;}
+
+#mainWrap {position: relative;}
+
+.main-top-con {position: fixed; top: 0; left: 0; width: 100%; overflow: hidden;}
+.main-top-con .videos {position: absolute; top: 100%; left: 0; width: 100%; height: 100vh; overflow: hidden;}
+.main-top-con video {display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width: auto; height: auto; max-width: 120%; min-height: 120%; object-fit: cover; opacity: 0;}
+.main-top-con video:nth-child(1) {opacity: 1;}
+.main-top-con video:nth-child(1)::after {content: ""; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100vh; background-color: rgba(255, 255, 255, 0.12);}
+
+.main-top-con .bgs {position: absolute; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden;}
+.main-top-con .bgs .one {position: absolute; top: 0; left: 0; width: 100%; height: 100vh; background-color: #0C1D33; opacity: 0;}
+.main-top-con .bgs .two {position: absolute; top: 0; left: 0; width: 100%; height: 100vh; background-color: #0A323A; opacity: 0;}
+
+
+.main-top-con > section {position: absolute; top: 100%; left: 0; width: 100%; height: 100vh;}
+.main-top-con .main-copy2 {position: relative; width: 100%; height: 100vh;}
+.main-top-con .main-copy2 .inner {position: absolute; top: 0; left: 50%; transform: translate(-50%, 0); width: 1460px; height: 100vh;}
+.main-top-con .main-copy2 .inner .txt1 {position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); opacity: 0;}
+.main-top-con .main-copy2 .inner .txt2 {position: absolute; bottom: 24px; right: 0; transform: translate(0, 100px); opacity: 0;}
+.main-top-con .main-copy2 .inner img {position: relative;}
+.main-top-con .main-copy2 {position: relative; width: 100%; height: 100vh;}
+.main-top-con .white-arrow-bt {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 100px; height: 100px; border-radius: 50px; z-index: 100; overflow: hidden; opacity: 0;}
+.main-top-con .white-arrow-bt img {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;}
+.main-top-con .white-arrow-bt::before {content: ""; display: block; position: absolute; top: 0; left: 0; width: 100px; height: 100px; background-color: rgba(99,102,106,0.4); backdrop-filter: blur(5px);}
+
+.main-con1 {position: relative; width: 100%; height: 100vh; overflow: hidden;}
+.main-con1 .part1 {position: absolute; top: 0; left: 0; width: 100%; height: 100vh;}
+.main-con1 .part1 .inner {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
+.main-con1 .part1 .inner .txt1 {margin-bottom: 65px;}
+.main-con1 .part2 {position: absolute; top: 0; left: 0; width: 100%; height: 100vh;}
+.main-con1 .part2 ul {position: absolute; top: 150%; left: 55%;}
+.main-con1 .part2 ul li {margin-bottom: 320px; opacity: 0.2; transition-duration: 0.5s; transition-property: opacity;}
+.main-con1 .part2 ul li.active {opacity: 1;}
+
+.main-con2 {position: relative; width: 100%; height: 100vh; overflow: hidden;}
+.main-con2 .part1 {position: absolute; top: 0; left: 0; width: 100%; height: 100vh;}
+.main-con2 .part1 .inner {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
+.main-con2 .part1 .inner .txt1 {margin-bottom: 65px;}
+.main-con2 .part2 {position: absolute; top: 0; left: 0; width: 100%; height: 100vh;}
+.main-con2 .part2 ul {position: absolute; top: 150%; left: 30%;}
+.main-con2 .part2 ul li {margin-bottom: 320px; opacity: 0.2; transition-duration: 0.5s; transition-property: opacity;}
+.main-con2 .part2 ul li.active {opacity: 1;}
+
+.main-con3 {position: relative; width: 100%; height: 100vh; overflow: hidden;}
+.main-con3 .part1 {position: absolute; top: 0; left: 0; width: 100%; height: 100vh;}
+.main-con3 .part1 .inner {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
+.main-con3 .part1 .inner .txt1 {margin-bottom: 65px;}
+.main-con3 .part2 {position: absolute; top: 0; left: 0; width: 100%; height: 100vh;}
+.main-con3 .part2 ul {position: absolute; top: 100%; left: 40%; width: 770px; height: 1340px;}
+.main-con3 .part2 ul li {position: absolute; top: 0; left: 0; opacity: 0.2; transition-duration: 0.5s; transition-property: opacity;}
+.main-con3 .part2 ul li:nth-child(2) {top: 320px; left: unset; right: 0;}
+.main-con3 .part2 ul li:nth-child(3) {top: 810px; left: 0;}
+.main-con3 .part2 ul li.active {opacity: 1;}
+
+
+.main-con4 {position: relative; width: 100%; height: 100vh; margin-top: 1500vh; background-color: #fff; z-index: 26;}
+.main-con4 .dimd {position: absolute; width: 100%; height: 110vh; background-color: #000; z-index: 25; opacity: 0;}
+.main-con4 .inner {position: absolute; top: 50%; left: 50%; padding: 160px 0; transform: translate(-50%, -50%); width: 1460px; height: 100vh; z-index: 26;}
+.main-con4 .inner .txt1 {position: relative; margin-bottom: 80px; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-property: transform, opacity;}
+.main-con4 .inner .sec {position: absolute; top: 350px; left: 0; opacity: 0;}
+.main-con4 .inner .sec.one {opacity: 1;}
+.main-con4 .inner .txt2 {position: relative; margin-bottom: 24px; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-delay: 0.1s; transition-property: transform, opacity;}
+.main-con4 .inner .txt3 {position: relative; margin-bottom: 40px; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-delay: 0.2s; transition-property: transform, opacity;}
+.main-con4 .inner > a {position: relative; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-delay: 0.3s; transition-property: transform, opacity;}
+.main-con4 .inner .bt-area {display: flex; justify-content: space-between; position: absolute; bottom: 140px; right: 0; width: 154px; height: 72px; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-delay: 0.4s; transition-property: transform, opacity;}
+.main-con4 .inner .indicator {display: flex; position: absolute; bottom: 140px; left: 0; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-delay: 0.4s; transition-property: transform, opacity;}
+.main-con4 .inner .indicator > a {display: block; width: 10px; height: 10px; margin-right: 10px; background-color: #000; opacity: 0.2; transition-duration: 0.5s; transition-property: opacity;}
+.main-con4 .inner .indicator > a.on {opacity: 1;}
+.main-con4.active .inner .txt1 {transform: translate(0, 0); opacity: 1;}
+.main-con4.active .inner .txt2 {transform: translate(0, 0); opacity: 1;}
+.main-con4.active .inner .txt3 {transform: translate(0, 0); opacity: 1;}
+.main-con4.active .inner > a {transform: translate(0, 0); opacity: 1;}
+.main-con4.active .inner .bt-area {transform: translate(0, 0); opacity: 1;}
+.main-con4.active .inner .indicator {transform: translate(0, 0); opacity: 1;}
+.main-con4 .video {position: absolute; top: 0; left: 0; width: 100%; height: 100vh;}
+.main-con4 .video video {display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width: auto; height: auto; max-width: 120%; min-height: 120%; object-fit: cover;}
+
+.main-con5 {position: relative; width: 100%; height: 100vh; overflow: hidden; background: #000; z-index: 25;}
+.main-con5 .bgs {position: absolute; top: 0; left: 0; width: 100%; height: 100vh;}
+.main-con5 .bgs > p {position: absolute; top: 0; left: 0; width: 100%; height: 100vh; opacity: 0;}
+.main-con5 .bgs > p video {display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width: auto; height: auto; max-width: 120%; min-height: 120%; object-fit: cover;}
+.main-con5 .bgs > p.ori {background: #ffffff; opacity: 1;}
+.main-con5 .bgs > p.two {background: url('../images/main-con10-bg2.jpg') no-repeat center center; background-size: cover;}
+.main-con5 .bgs > p.thr {background: url('../images/main-con10-bg3.jpg') no-repeat center center; background-size: cover;}
+.main-con5 .inner {position: absolute; top: 320px; left: 50%; transform: translate(-50%, 0); width: 1460px; height: 100vh;}
+.main-con5 .inner .txt2 {margin: 100px 0 0 150px}
+.main-con5 .inner .list {position: absolute; top: 120%; left: 0; width: 100%; opacity: 0;}
+.main-con5 .inner .list > a {display: flex; justify-content: space-between; align-items: center; width: 100%; height: 90px; margin-bottom: 80px; opacity: 0.2;}
+
+.main-con6 {position: relative; width: 100%; height: 100vh; overflow: hidden; z-index: 25;}
+.main-con6 .inner1 {position: absolute; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden;}
+.main-con6 .inner1 .bottom {position: absolute; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden;}
+.main-con6 .inner1 .bottom .bg {position: absolute; top: 0; left: 0; width: 100%; height: 100vh; background: url('../images/main-con11-bg.jpg') no-repeat center center; background-size: cover; overflow: hidden;}
+.main-con6 .inner1 .inner2 {position: absolute; top: 240px; left: 50%; transform: translate(-50%, 0); width: 1460px; height: 100vh; opacity: 1;}
+.main-con6 .inner1 > .txt1 {position: absolute; top: 240px; left: 0; width: 100%; text-align: center; z-index: 11; opacity: 0; transform: translate(0, 200px);}
+.main-con6 .inner1 > .mask {position: absolute; top: 0; left: 0; width: 100%; height: 110vh; background: url('../images/mask2.svg') no-repeat center 0; background-size: cover;}
+.main-con6 .inner1 .inner2 .txt1 {text-align: center;}
+.main-con6 .inner1 .inner2 .txt2 {text-align: center; margin-top: 80px; transform: translate(0, 100px); opacity: 0;}
+.main-con6 .inner1 .inner2 ul {display: flex; justify-content: space-between; margin-top: 350px; transform: translate(0, 100px); opacity: 0;}
+
+.main-con7 {position: relative; width: 100%; padding: 240px 0; background-color: #F0F0F0; z-index: 25;}
+.main-con7 .inner {position: relative; width: 1460px; margin: auto;}
+.main-con7 .inner .tit {position: relative; margin-bottom: 100px; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-property: transform, opacity;}
+.main-con7 .inner .tab {display: block; position: absolute; top: 107px; right: 0; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-property: transform oopacity; transition-delay: 0.1s;}
+.main-con7 .inner .content {display: flex; justify-content: space-between; width: 100%; height: 1430px;}
+.main-con7 .inner .content .left {position: relative; width: 860px; height: 1430px; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-property: transform oopacity; transition-delay: 0.2s;}
+.main-con7 .inner .content .left a {position: absolute;}
+.main-con7 .inner .content .left a:nth-child(1) {top: 0; left: 0;}
+.main-con7 .inner .content .left a:nth-child(2) {top: 0; right: 0;}
+.main-con7 .inner .content .left a:nth-child(3) {top: 430px; left: 0;}
+.main-con7 .inner .content .left a:nth-child(3) > p {position: absolute; top: 0; left: 0; opacity: 0; opacity: 0; transition-duration: 0.5s; transition-property: opacity;}
+.main-con7 .inner .content .left a:nth-child(3):hover > p {opacity: 1;}
+.main-con7 .inner .content .left a:nth-child(4) {top: 520px; right: 0;}
+.main-con7 .inner .content .left a:nth-child(5) {top: 950px; left: 0;}
+.main-con7 .inner .content .left a:nth-child(6) {top: 970px; right: 0;}
+.main-con7 .inner .content .right {position: relative; transform: translate(0, 100px); opacity: 0; transition-duration: 0.5s; transition-property: transform oopacity; transition-delay: 0.3s;}
+.main-con7 .inner .content .right > p {margin-bottom: 120px;}
+.main-con7.active .inner .tit {transform: translate(0, 0); opacity: 1;}
+.main-con7.active .inner .tab {transform: translate(0, 0); opacity: 1;}
+.main-con7.active .inner .content .left {transform: translate(0, 0); opacity: 1;}
+.main-con7.active .inner .content .right {transform: translate(0, 0); opacity: 1;}
+
+.topbt {position: absolute; bottom: 50px; right: 80px; z-index: 100;}
+
+footer {position: relative; width: 100%; height: 820px; background: url('../images/footer-bg.jpg') no-repeat center 0; background-size: cover; z-index: 25;}
+footer .inner {display: block; position: relative; width: 1430px; height: 820px; margin: auto;}
+footer .inner .txt1 {position: absolute; top: 160px; left: 0;}
+footer .inner .txt2 {position: absolute; top: 450px; left: 0;}
+footer .inner .txt3 {position: absolute; top: 520px; left: 0;}
+footer .inner .txt4 {position: absolute; top: 450px; left: 720px;}
+footer .inner .txt5 {position: absolute; top: 450px; right: 0;}
+footer .inner .bottom {position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; border-top: 1px solid rgba(255, 255, 255, 0.12);}
+footer .inner .bottom span:nth-child(1) {position: absolute; top: 50px; left: 0;}
+footer .inner .bottom span:nth-child(2) {position: absolute; top: 40px; right: 0;}
